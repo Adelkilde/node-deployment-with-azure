@@ -9,21 +9,21 @@ app.use(express.json()); // to parse JSON bodies
 app.use(cors());
 
 app.get("/", (req, res) => {
-    res.send("Node Express REST Users API");
+  res.send("Node Express REST Users API 🌟");
 });
 
 // READ all users
 app.get("/users", (request, response) => {
-    const query = "SELECT * FROM users ORDER BY name;"; // sql query to select all from the table users
-    dbConnection.query(query, (error, results, fields) => {
-        if (error) {
-            console.log(error);
-        } else {
-            response.json(results);
-        }
-    });
+  const query = "SELECT * FROM users ORDER BY name;"; // sql query to select all from the table users
+  dbConnection.query(query, (error, results, fields) => {
+    if (error) {
+      console.log(error);
+    } else {
+      response.json(results);
+    }
+  });
 });
 
 app.listen(port, () => {
-    console.log(`App listening on port ${port}`);
+  console.log(`App listening on port ${port}`);
 });
